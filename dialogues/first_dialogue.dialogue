@@ -1,0 +1,19 @@
+~ start
+King Pig: Hola, Bienvenido a mi reino, siento decirte que los cerdos que aquí vivían se han vuelto locos.
+King Pig: Tienes varias opciones.
+- Luchar contra ellos
+	if not GameManager.has_acepted_npc_treat
+		do GameManager.increase_experience(20)
+		Obtienes +20 de experiencia.
+		King Pig: Muy bien, pasa por la puerta.
+		set GameManager.has_acepted_npc_treat = true
+	else
+		King Pig: No te pienso dar más experiencia, vete ya.	
+- Irte por donde has venido
+	King Pig: ¡Cobarde!
+- Ver los créditos
+	King Pig: Este juego ha sido creado por Albergv, aunque claro está con ayuda de tutoriales y artistas idependientes.
+- Empezar de nuevo => start
+- Terminar la conversación => END
+King Pig: ...
+=> END
