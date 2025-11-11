@@ -355,7 +355,6 @@ radius = 22.022715
 size = Vector2(19, 20)
 
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(18, 20)
 script = ExtResource("1_g2els")
 move_speed = 140.0
 jump_speed = 400.0
@@ -363,7 +362,7 @@ metadata/_edit_group_ = true
 
 [node name="animatedSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_8svfe")
-animation = &"fall"
+animation = &"idle"
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -373,3 +372,8 @@ shape = SubResource("CircleShape2D_smehm")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 5)
 shape = SubResource("RectangleShape2D_g2els")
+debug_color = Color(0.95068914, 0.18816835, 0.3167725, 0.41960785)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+process_callback = 0
+position_smoothing_enabled = true
