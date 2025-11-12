@@ -1,13 +1,20 @@
-[gd_scene load_steps=55 format=3 uid="uid://c6qn7pyfgj16s"]
+[gd_scene load_steps=57 format=3 uid="uid://c6qn7pyfgj16s"]
 
 [ext_resource type="Texture2D" uid="uid://bqwj412723oxl" path="res://sprites/player/Mask Dude/Idle (32x32).png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://cq7c4tfhdfbic" path="res://scenes/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://b5hv8o0e3niv3" path="res://sprites/player/Mask Dude/Double Jump (32x32).png" id="2_smehm"]
+[ext_resource type="Script" uid="uid://dn4yatt7776i2" path="res://autoloads/stats.gd" id="2_ur7pv"]
 [ext_resource type="Texture2D" uid="uid://b5kdx5kw5e63x" path="res://sprites/player/Mask Dude/Fall (32x32).png" id="3_ur7pv"]
 [ext_resource type="Texture2D" uid="uid://dhfmmtfe03kjl" path="res://sprites/player/Mask Dude/Hit (32x32).png" id="4_y4r1p"]
 [ext_resource type="Texture2D" uid="uid://cmw5yqa0cjobw" path="res://sprites/player/Mask Dude/Jump (32x32).png" id="6_d2wvv"]
 [ext_resource type="Texture2D" uid="uid://bq4w87rtoua24" path="res://sprites/player/Mask Dude/Run (32x32).png" id="7_3v2ag"]
 [ext_resource type="Texture2D" uid="uid://ca0yce7rymcno" path="res://sprites/player/Mask Dude/Wall Jump (32x32).png" id="8_jej6c"]
+
+[sub_resource type="Resource" id="Resource_y4r1p"]
+script = ExtResource("2_ur7pv")
+health = 3
+max_health = 3
+metadata/_custom_type_script = "uid://dn4yatt7776i2"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f1ej7"]
 atlas = ExtResource("2_smehm")
@@ -358,6 +365,7 @@ size = Vector2(19, 20)
 script = ExtResource("1_g2els")
 move_speed = 140.0
 jump_speed = 400.0
+stats = SubResource("Resource_y4r1p")
 metadata/_edit_group_ = true
 
 [node name="animatedSprite" type="AnimatedSprite2D" parent="."]
@@ -369,7 +377,7 @@ animation = &"idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_smehm")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="hurtbox" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 5)
 shape = SubResource("RectangleShape2D_g2els")
 debug_color = Color(0.95068914, 0.18816835, 0.3167725, 0.41960785)

@@ -1,14 +1,21 @@
-[gd_scene load_steps=43 format=3 uid="uid://bcbdiuaf54fj"]
+[gd_scene load_steps=45 format=3 uid="uid://bcbdiuaf54fj"]
 
 [ext_resource type="Texture2D" uid="uid://w1j401hsiyrg" path="res://sprites/enemies/03-Pig/Idle (34x28).png" id="1_4a8uq"]
 [ext_resource type="Texture2D" uid="uid://drx67c2lfinix" path="res://sprites/enemies/03-Pig/Attack (34x28).png" id="1_bfkq4"]
 [ext_resource type="Script" uid="uid://dm1ccqrjbc1pb" path="res://scenes/pig.gd" id="1_kb7da"]
 [ext_resource type="Texture2D" uid="uid://bud3utalixex3" path="res://sprites/enemies/03-Pig/Run (34x28).png" id="2_j740r"]
 [ext_resource type="Texture2D" uid="uid://c8n4w4yvfrwmq" path="res://sprites/enemies/03-Pig/Dead (34x28).png" id="2_kb7da"]
+[ext_resource type="Script" uid="uid://dn4yatt7776i2" path="res://autoloads/stats.gd" id="2_ley84"]
 [ext_resource type="Texture2D" uid="uid://bqogxfpnvo7j2" path="res://sprites/enemies/03-Pig/Fall (34x28).png" id="3_ley84"]
 [ext_resource type="Texture2D" uid="uid://d4l28ubb2wn2c" path="res://sprites/enemies/03-Pig/Ground (34x28).png" id="4_udrue"]
 [ext_resource type="Texture2D" uid="uid://cbxnnontdqpt8" path="res://sprites/enemies/03-Pig/Hit (34x28).png" id="5_1bhvn"]
 [ext_resource type="Texture2D" uid="uid://b1c0ys64mh2ij" path="res://sprites/enemies/03-Pig/Jump (34x28).png" id="7_klou0"]
+
+[sub_resource type="Resource" id="Resource_udrue"]
+script = ExtResource("2_ley84")
+health = 2
+max_health = 2
+metadata/_custom_type_script = "uid://dn4yatt7776i2"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_menj8"]
 atlas = ExtResource("1_bfkq4")
@@ -191,10 +198,22 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lpxow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ercpv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lpxow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ercpv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lpxow")
 }],
-"loop": true,
+"loop": false,
 "name": &"hit",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -229,7 +248,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 9.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -271,13 +290,15 @@ radius = 7.0
 
 [node name="pig" type="CharacterBody2D"]
 script = ExtResource("1_kb7da")
-move_speed = 30.0
-jump_speed = 400.0
+move_speed = 10.0
+jump_speed = 200.0
+stats = SubResource("Resource_udrue")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_menj8")
-animation = &"idle"
-frame_progress = 0.5406317
+animation = &"hit"
+frame = 5
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, 6)
