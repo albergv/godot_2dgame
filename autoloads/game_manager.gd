@@ -7,6 +7,7 @@ var is_dialogue_active = false
 var player_damage = 1
 var pig_damage = 1
 var player_is_hit = false
+var player_has_cure = false
 
 	
 func increase_experience(experience_amount):

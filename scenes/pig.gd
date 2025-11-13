@@ -7,7 +7,6 @@ extends CharacterBody2D
 
 @onready var animated_sprite2D = $AnimatedSprite2D
 @onready var area2d = $Area2D
-@onready var animated_sprite = $animatedSprite
 
 const friction = 500
 
