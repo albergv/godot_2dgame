@@ -8,6 +8,7 @@ var player_damage = 1
 var pig_damage = 1
 var player_is_hit = false
 var player_has_cure = false
+var green_bottle_given = false
 
 	
 func increase_experience(experience_amount):

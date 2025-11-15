@@ -103,8 +103,8 @@ tile_map_data = PackedByteArray("AAAAABAAAAAAAAIAAAAAAAAAAAAAAAAAAAABABAAAAABAAI
 tile_set = SubResource("TileSet_6cvei")
 
 [node name="door" parent="." instance=ExtResource("6_wo48x")]
-position = Vector2(72, 180)
-scale = Vector2(0.9, 0.9)
+position = Vector2(31, 201.99998)
+scale = Vector2(0.7, 0.7)
 next_scene_path = "res://scenes/level.tscn"
 
 [node name="pig" parent="." instance=ExtResource("4_eqxsl")]
@@ -123,7 +123,7 @@ position = Vector2(245, 210)
 position = Vector2(592, -40)
 
 [node name="Player" parent="." instance=ExtResource("3_b4j7a")]
-position = Vector2(72, 193)
+position = Vector2(72, 192)
 
 [connection signal="body_entered" from="door" to="door" method="_on_body_entered"]
 [connection signal="body_exited" from="door" to="door" method="_on_body_exited"]

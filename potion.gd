@@ -8,6 +8,8 @@ var player_take_potion = false
 
 
 func _ready() -> void:
+	if GameManager.player_has_cure:
+		queue_free()
 	pass
 
 
@@ -31,9 +33,9 @@ func _on_body_entered(body):
 		player_take_potion = true
 
 		
-func _on_body_exited(body):
-	if body.name == "Player":
-		player_take_potion = false
+#func _on_body_exited(body):
+	#if body.name == "Player":
+	#	player_take_potion = false
 		
 				
 		

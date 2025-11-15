@@ -32,4 +32,5 @@ func change_scene():
 	
 func change_scene2():
 	get_tree().change_scene_to_file(next_scene_path)
-	GameManager.player_has_cure = false
+	GameManager.has_acepted_npc_treat = true
+	#GameManager.player_has_cure = false

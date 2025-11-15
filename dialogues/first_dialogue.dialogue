@@ -1,11 +1,23 @@
 ~ start
+if GameManager.player_has_cure and not GameManager.green_bottle_given
+	King Pig: ¿Has traido la botella verde?
+	set GameManager.green_bottle_given = true
+	Entregas la botella verde a King Pig
+	do GameManager.increase_experience(80)
+	Obtienes +80 de experiencia. Has subido al nivel 2.
+	King Pig: Genial, tardaré unos días en hacerla... Puedes seguir dando brincos mientras tanto si quieres.
+	=> END
+if GameManager.player_has_cure and GameManager.green_bottle_given
+	King Pig: Necesito más tiempo, vete a pastar.
+	=> END
 King Pig: Hola, Bienvenido a mi reino, siento decirte que los cerdos que aquí vivían se han vuelto locos.
+King Pig: Hay una botella verde que les curaría, pero yo no puedo alcanzarla.
 King Pig: Tienes varias opciones.
-- Luchar contra ellos
+- Aceptar la misión y traerme la poción.
 	if not GameManager.has_acepted_npc_treat
 		do GameManager.increase_experience(20)
 		Obtienes +20 de experiencia.
-		King Pig: Muy bien, pasa por la puerta.
+		King Pig: Muy bien, está detrás de esta puerta, vuelve cuando la tengas.
 		set GameManager.has_acepted_npc_treat = true
 	else
 		King Pig: No te pienso dar más experiencia, vete ya.	
