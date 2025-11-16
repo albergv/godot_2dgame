@@ -11,7 +11,7 @@ func _ready():
 	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
 
 func _process(_delta):
-	if is_player_close and Input.is_action_just_pressed("ui_accept") and not GameManager.is_dialogue_active:
+	if is_player_close and Input.is_action_just_pressed("action_1") and not GameManager.is_dialogue_active:
 		DialogueManager.show_dialogue_balloon(my_dialogue, "start")
 
 func _on_area_entered(_area):

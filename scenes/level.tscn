@@ -369,12 +369,13 @@ tile_map_data = PackedByteArray("AAAAABAAAAAAAAIAAAAdABAAAAACAAIAAAAdAAAAAAACAAA
 tile_set = SubResource("TileSet_w8frs")
 
 [node name="npc" parent="." instance=ExtResource("4_mx8sn")]
-position = Vector2(418, 194)
+position = Vector2(411, 194)
 
 [node name="door" parent="." instance=ExtResource("5_ppgk2")]
 position = Vector2(449, 189)
 scale = Vector2(0.6, 0.6)
 next_scene_path = "res://scenes/level_2.tscn"
+number_door = "1"
 
 [node name="Player" parent="." instance=ExtResource("3_w8frs")]
 position = Vector2(66, 192)
