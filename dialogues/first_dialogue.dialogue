@@ -13,7 +13,7 @@ if GameManager.player_has_cure and GameManager.green_bottle_given
 King Pig: Hola, Bienvenido a mi reino, siento decirte que los cerdos que aquí vivían se han vuelto locos.
 King Pig: Hay una botella verde que les curaría, pero yo no puedo alcanzarla.
 King Pig: Tienes varias opciones.
-- Aceptar la misión y traerme la poción.
+- Aceptar la misión y traer la poción.
 	if not GameManager.has_acepted_npc_treat
 		do GameManager.increase_experience(20)
 		Obtienes +20 de experiencia.
